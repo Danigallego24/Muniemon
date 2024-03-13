@@ -12,7 +12,8 @@ public class MainMuniemon {
 		
 		//Creamos el objeto muniemon
 		
-		Muniemon muniemon = new Muniemon();
+		Muniemon primerMuniemon = new Muniemon();
+		Muniemon segundoMuniemon = new Muniemon();
 		
 		//CAPA 1: MENU DE INICIO
 		
@@ -24,27 +25,80 @@ public class MainMuniemon {
 		do {
 			
 			System.out.println("Elija una opción");
-			System.out.println("1. Dar de alta un Muniemon");
-			System.out.println("2. Mostrar Muniemon");
-			System.out.println("3. Salir del programa");
+			System.out.println("1. Dar de alta primer Muniemon");
+			System.out.println("2. Dar de alta segundo Muniemon");
+			System.out.println("3. Mostrar primer Muniemon");
+			System.out.println("4. Mostrar segundo Muniemon");
+			System.out.println("5. Ataca el primer Muniemon al segundo Muniemon");
+			System.out.println("6. Ataca el segundo Muniemon al primer Muniemon");
+			System.out.println("7. Salir del programa");
 			numero = sc.nextInt();
 			
 			switch(numero) {
 			
 			case 1:
 				
-				System.out.println("A continuación vamos a dar de alta un Muniemon");
+				System.out.println("A continuación vamos a dar de alta el primer Muniemon");
 				
-				muniemon.crearMuniemon();
+				primerMuniemon.crearMuniemon();
+				
+				break;
+				
+			case 2:
+				
+				System.out.println("A continuación vamos a dar de alta el segundo Muniemon");
+				
+				segundoMuniemon.crearMuniemon();
 				
 				break;
 			
-			case 2:
-				
-				System.out.println("A continuación se mostrará el Muniemon");
-				System.out.println(muniemon.toString());
-				
 			case 3:
+	
+				System.out.println("A continuación se mostrará el primer Muniemon");
+				System.out.println(primerMuniemon.toString());
+				
+				break;
+				
+			case 4:
+				
+				System.out.println("A continuación se mostrará el segundo Muniemon");
+				System.out.println(segundoMuniemon.toString());
+				
+				break;
+				
+			case 5:
+				
+				System.out.println("Primer Muniemon ataca a segundo Muniemon");
+				
+				if (primerMuniemon != null && segundoMuniemon != null) {
+					
+                    primerMuniemon.atacarMuniemon(segundoMuniemon);
+                    
+                } else {
+                	
+                    System.out.println("Debe crear ambos Muniemon primero.");
+                    
+                }
+				
+                break;
+			
+			case 6:
+				
+				System.out.println("Segundo Muniemon ataca a primer Muniemon");
+				
+				if (primerMuniemon != null && segundoMuniemon != null) {
+					
+                    segundoMuniemon.atacarMuniemon(primerMuniemon);
+                    
+                } else {
+                	
+                    System.out.println("Debe crear ambos Muniemon primero.");
+                    
+                }
+				
+                break;
+				
+			case 7:
 				
 				System.out.println("Usted decidio salir del programa");
 				
@@ -60,7 +114,7 @@ public class MainMuniemon {
 			
 			System.out.println("________________________________________________");
 			
-		}while(numero != 3);
+		}while(numero != 7);
 		
 	}
 
