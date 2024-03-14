@@ -12,6 +12,7 @@ public class Muniemon {
 	private int vida;
 	private int ataque;
 	private int defensa;
+	private int velocidad;
 	private TypeMuniemon tipo;
 
 	// Getters y Setters
@@ -61,6 +62,18 @@ public class Muniemon {
 	public void setDefensa(int defensa) {
 
 		this.defensa = defensa;
+
+	}
+	
+	public int getVelocidad() {
+
+		return velocidad;
+
+	}
+
+	public void setVelocidad(int velocidad) {
+
+		this.velocidad = velocidad;
 
 	}
 
