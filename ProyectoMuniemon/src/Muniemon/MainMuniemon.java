@@ -68,8 +68,6 @@ public class MainMuniemon {
 				
 			case 5:
 				
-				System.out.println("Primer Muniemon ataca a segundo Muniemon");
-				
 				if (primerMuniemon != null && segundoMuniemon != null) {
 					
                     primerMuniemon.atacarMuniemon(segundoMuniemon);

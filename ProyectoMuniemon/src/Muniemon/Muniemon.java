@@ -123,52 +123,35 @@ public class Muniemon {
 
 	public void atacarMuniemon(Muniemon muniemon) {
 
+		
 		if (getVida() <= 0) {
+			
 			System.out.println(this.nombre + " no puede atacar porque está muerto.");
+			
 			return;
+			
 		}
 
 		int danio = this.ataque - muniemon.defensa;
+		
 		if(danio < 0 ) {
+			
 			danio = 0;
+			
 		}
 		
 		int vidaMuniemon = muniemon.getVida();
 		int nuevaVida = vidaMuniemon - danio;
 		muniemon.vida = nuevaVida;
+		
+		System.out.println(getNombre() + " ha atacado a " + muniemon.nombre + " y le ha hecho un daño de " + danio);
+		System.out.println(muniemon.nombre + " ahora cuenta con " + nuevaVida + " puntos de vida");
+		
 		if(muniemon.vida <= 0) {
+			
 			System.out.println("El muniemon " + muniemon.nombre + " ha muerto :(");
+			
 		}
-
-		/*
-		if (muniemon.defensa <= 0) {
-
-			int ataqueFinal = muniemon.vida - getAtaque();
-
-		} else {
-
-			int ataqueMuniemon = muniemon.defensa - getAtaque();
-
-			if (ataqueMuniemon < 0) {
-
-				ataqueMuniemon = 0;
-
-			}
-
-			muniemon.defensa -= ataqueMuniemon;
-
-			System.out.println(getNombre() + " ataca a " + muniemon.nombre + " y le resta " + muniemon.defensa + " puntos de defensa.");
-			System.out.println(muniemon.nombre + " cuenta ahora con " + ataqueMuniemon + " puntos de defensa");
-		 	
-		}
-*/
-
-
-	if (muniemon.vida <= 0) {
-
-		System.out.println(muniemon.nombre + " ha sido derrotado");
-
-	}
 
 	}
 
